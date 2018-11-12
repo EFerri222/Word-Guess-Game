@@ -55,3 +55,16 @@ img {
     margin-right: auto;
     margin-top: 50px;
 }
+
+#resultBox {
+    margin:  20px auto 0 auto;
+    height: 75px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: pokemon;
+    background-color: #FFCB05;
+    color: #3664AD;
+    width: 66%;
+    display: none;
+}
