@@ -21,8 +21,8 @@
         <div id="rightSide">
             Press any key to get started!<br><br>
             Wins: <br><br>
-            Current Word: <p id="answer-text"></p><br><br>
-            <p id="answer-text"></p> <br><br><br>
+            Current Word: <br><br>
+            <p id="answer-text"></p> <br><br>
             Number of Guesses Remaining: <p id="guesses-remaining-text">12</p> <br><br>
             Letters Guessed: <p id="guesses-text"></p>
         </div>
@@ -31,5 +31,11 @@
     <div id="resultBox">
         <p id="result-text"></p>
     </div>
+
+    <script>
+        var maskedAnswer = document.getElementById("answer-text");
+        maskedAnswer.textContent = maskAnswer(answer).join(" ");
+    </script>
+
 </body>
 </html>

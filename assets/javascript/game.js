@@ -1,9 +1,21 @@
-var answersArray = ["bulbasaur", "charmander", "squirtle"];
+// var answersArray = ["bulbasaur", "charmander", "squirtle"];
+var answer = "bulbasaur";
 var guessesArray = [];
+var splitAnswer = answer.split("");
 
-// function(event) {
-//     var answer = 
-// }
+var maskAnswer = function(str) {
+    var res = [];
+    for (i=0; i < str.length; i++) {
+        res.push("_ ");
+    }
+    return res;
+}
+
+var guessedSoFar = maskAnswer(answer);
+
+// var maskedAnswer = document.getElementById("answer-text");
+// maskedAnswer.textContent = "test";
+// document.getElementById("answer-text").innerHTML = "Test";
 
 document.onkeyup = function(event) {
 
@@ -31,6 +43,13 @@ document.onkeyup = function(event) {
 
     // Adds guess to the guesses-remaining-text paragraph element.
     guesses.textContent = guessesArray;
+
+    for (i=0; i<splitAnswer.length; i++) {
+        if (userGuess == splitAnswer[i]) {
+            guessedSoFar[i] = userGuess;
+            document.getElementById("answer-text").innerHTML = guessedSoFar.join(" ");
+        }
+    }
 
     // Updates the guesses remaining count
     guessesRemaining.textContent = 12 - guessesArray.length;
