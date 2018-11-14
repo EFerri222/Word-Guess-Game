@@ -54,12 +54,32 @@ document.onkeyup = function(event) {
     // Updates the guesses remaining count
     guessesRemaining.textContent = 12 - guessesArray.length;
 
+    var win = false;
+    var result = document.getElementById("result-text");
+
+    for (i=0; i<guessedSoFar.length; i++) {
+        if (guessedSoFar[i] !== "_ ") {
+            win = true;
+        } else {
+            win = false;
+        }
+    }
+
+    if (win === true) {
+        guessesRemaining.textContent = 12;
+        guessesArray = [];
+        guesses.textContent = "";
+        document.getElementById("answer-text").innerHTML = maskAnswer(answer).join(" ");
+        result.textContent = "YOU WIN! :D Press any key to play again";
+        document.getElementById("resultBox").style.display = "block";
+    }
+
     // If you run out of guesses, you lose
     if (guessesRemaining.textContent === "0") {
         guessesRemaining.textContent = 12;
         guessesArray = [];
         guesses.textContent = "";
-        var result = document.getElementById("result-text");
+        // var result = document.getElementById("result-text");
         result.textContent = "You Lose! :( Press any key to play again";
         document.getElementById("resultBox").style.display = "block";
     }
