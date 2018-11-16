@@ -76,11 +76,11 @@ img {
 
 #answerRevealed {
     font-family: pokemon;
-    color: #3664AD;
+    color: white;
     font-size: 48px;
     text-align: center;
     margin: 0 auto 0 auto;
-    background-color: #FFCB05;
+    /* background-color: #FFCB05; */
     font-weight: bold;
     height: 70px;
     width: 480px;
@@ -101,4 +101,15 @@ img {
     height: 270px;
     width: 270px;
     position: relative;
+}
+
+#musicContainer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#musicPlayer {
+    width: 300px;
+    margin: 0 auto 0 auto;
 }
