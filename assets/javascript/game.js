@@ -1,7 +1,9 @@
 //Global Variables
 var win = false;
+var winCount = 0;
+var lossCount = 0;
 var reset = false;
-var answersArray = ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle" , "blastoise", "caterpie", "metapod", "butterfree", "weedle", "kakuna", "beedrill", "pidgey", "pidgeotto", "pidgeot", "rattata", "raticate", "spearow", "fearow", "ekans", "arbok", "pikachu", "raichu", "sandshrew", "sandslash", "nidoran female", "nidorina", "nidoqueen", "nidoran male", "nidorino", "nidoking", "clefairy", "clefable", "vulpix", "ninetales", "jigglypuff", "wigglytuff", "zubat", "golbat", "oddish", "gloom", "vileplume", "paras", "parasect", "venonat", "venomoth", "diglett", "dugtrio", "meowth", "persian", "psyduck", "golduck", "mankey", "primeape", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "machop", "machoke", "machamp", "bellsprout", "weepinbell", "victreebel", "tentacool", "tentacruel", "geodude", "graveler", "golem", "ponyta", "rapidash", "slowpoke", "slowbro", "magnemite", "magneton", "farfetchd", "doduo", "dodrio", "seel", "dewgong", "grimer", "muk", "shellder", "cloyster", "gastly", "haunter", "gengar", "onix", "drowzee", "hypno", "krabby", "kingler", "voltorb", "electrode", "exeggcute", "exeggutor", "cubone", "marowak", "hitmonlee", "hitmonchan", "lickitung", "koffing", "weezing", "rhyhorn", "rhydon", "chansey", "tangela", "kangaskhan", "horsea", "seadra", "goldeen", "seaking", "staryu", "starmie", "mr mime", "scyther", "jynx", "electabuzz", "magmar", "pinsir", "tauros", "magikarp", "gyarados", "lapras", "ditto", "eevee", "vaporeon", "jolteon", "flareon", "porygon", "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "snorlax", "articuno", "zapdos", "moltres", "dratini", "dragonair", "dragonite", "mewtwo", "mew"];
+var answersArray = ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle" , "blastoise", "caterpie", "metapod", "butterfree", "weedle", "kakuna", "beedrill", "pidgey", "pidgeotto", "pidgeot", "rattata", "raticate", "spearow", "fearow", "ekans", "arbok", "pikachu", "raichu", "sandshrew", "sandslash", "nidoran", "nidorina", "nidoqueen", "nidorino", "nidoking", "clefairy", "clefable", "vulpix", "ninetales", "jigglypuff", "wigglytuff", "zubat", "golbat", "oddish", "gloom", "vileplume", "paras", "parasect", "venonat", "venomoth", "diglett", "dugtrio", "meowth", "persian", "psyduck", "golduck", "mankey", "primeape", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "machop", "machoke", "machamp", "bellsprout", "weepinbell", "victreebel", "tentacool", "tentacruel", "geodude", "graveler", "golem", "ponyta", "rapidash", "slowpoke", "slowbro", "magnemite", "magneton", "farfetchd", "doduo", "dodrio", "seel", "dewgong", "grimer", "muk", "shellder", "cloyster", "gastly", "haunter", "gengar", "onix", "drowzee", "hypno", "krabby", "kingler", "voltorb", "electrode", "exeggcute", "exeggutor", "cubone", "marowak", "hitmonlee", "hitmonchan", "lickitung", "koffing", "weezing", "rhyhorn", "rhydon", "chansey", "tangela", "kangaskhan", "horsea", "seadra", "goldeen", "seaking", "staryu", "starmie", "mr mime", "scyther", "jynx", "electabuzz", "magmar", "pinsir", "tauros", "magikarp", "gyarados", "lapras", "ditto", "eevee", "vaporeon", "jolteon", "flareon", "porygon", "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "snorlax", "articuno", "zapdos", "moltres", "dratini", "dragonair", "dragonite", "mewtwo", "mew"];
 
 var answer = answersArray[Math.floor(Math.random() * answersArray.length)];
 //Hold what the user has guessed
@@ -110,7 +112,18 @@ document.onkeyup = function(event) {
         function displayPicture(pokemon) {
             document.getElementById("whoImg").innerHTML = "<img src=\"assets/images/pokemon-sprites/" + pokemon + ".png\">";
         }
-        displayPicture(answer);
+
+        if (answer === "nidoran") {
+            var nidoranArray = ["m", "f"];
+            var gender = nidoranArray[Math.floor(Math.random() * nidoranArray.length)];
+            if (gender === "m") {
+                document.getElementById("whoImg").innerHTML = "<img src=\"assets/images/pokemon-sprites/nidoranm.png\">";
+            } else {
+                document.getElementById("whoImg").innerHTML = "<img src=\"assets/images/pokemon-sprites/nidoranf.png\">"
+            }
+        } else {
+            displayPicture(answer);
+        }
         document.getElementById("whoImg").style.display = "block";
         result.textContent = "YOU WIN! :D Press any key to play again";
         document.getElementById("resultBox").style.display = "block";
@@ -119,6 +132,8 @@ document.onkeyup = function(event) {
         guessedSoFar = maskAnswer(answer);
         document.getElementById("answer-text").textContent = maskAnswer(answer).join(" ");
         // reset = true;
+        winCount++;
+        document.getElementById("winsAndLosses").innerHTML = "Wins: " + winCount + "<br>Losses: " + lossCount;
     }
 
     win = false;
@@ -133,7 +148,19 @@ document.onkeyup = function(event) {
         function displayPicture(pokemon) {
             document.getElementById("whoImg").innerHTML = "<img src=\"assets/images/pokemon-sprites/" + pokemon + ".png\">";
         }
-        displayPicture(answer);
+
+        if (answer === "nidoran") {
+            var nidoranArray = ["m", "f"];
+            var gender = nidoranArray[Math.floor(Math.random() * nidoranArray.length)];
+            if (gender === "m") {
+                document.getElementById("whoImg").innerHTML = "<img src=\"assets/images/pokemon-sprites/nidoranm.png\">";
+            } else {
+                document.getElementById("whoImg").innerHTML = "<img src=\"assets/images/pokemon-sprites/nidoranf.png\">"
+            }
+        } else {
+            displayPicture(answer);
+        }
+
         document.getElementById("whoImg").style.display = "block";
         // var result = document.getElementById("result-text");
         result.textContent = "You Lose! :( Press any key to play again";
@@ -143,5 +170,7 @@ document.onkeyup = function(event) {
         guessedSoFar = maskAnswer(answer);
         document.getElementById("answer-text").textContent = maskAnswer(answer).join(" ");
         // reset = true;
+        lossCount++;
+        document.getElementById("winsAndLosses").innerHTML = "Wins: " + winCount + "<br>Losses: " + lossCount;
     }
   }
