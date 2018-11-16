@@ -47,13 +47,18 @@ header {
     background-color: white;
 }
 
-img {
+/* img {
     width: 480px;
     height: 270px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
+} */
+
+img {
+    width: 270px;
+    height: 270px;
 }
 
 #resultBox {
@@ -80,4 +85,20 @@ img {
     height: 70px;
     width: 480px;
     display: none;
+}
+
+#whoContainer {
+    background-image: url("../images/who.png");
+    background-size: 100% 100%;
+    width: 480px;
+    height: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#whoImg {
+    height: 270px;
+    width: 270px;
+    position: relative;
 }
