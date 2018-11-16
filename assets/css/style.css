@@ -68,3 +68,16 @@ img {
     width: 66%;
     display: none;
 }
+
+#answerRevealed {
+    font-family: pokemon;
+    color: #3664AD;
+    font-size: 48px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    background-color: #FFCB05;
+    font-weight: bold;
+    height: 70px;
+    width: 480px;
+    display: none;
+}

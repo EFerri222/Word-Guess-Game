@@ -97,6 +97,8 @@ document.onkeyup = function(event) {
         guessesRemaining.textContent = 6;
         guessesArray = [];
         guesses.textContent = "";
+        document.getElementById("answerRevealed").textContent = "It's " + answer.toUpperCase() + "!";
+        document.getElementById("answerRevealed").style.display = "block";
         result.textContent = "YOU WIN! :D Press any key to play again";
         document.getElementById("resultBox").style.display = "block";
         answer = answersArray[Math.floor(Math.random() * answersArray.length)];
@@ -112,6 +114,8 @@ document.onkeyup = function(event) {
         guessesRemaining.textContent = 6;
         guessesArray = [];
         guesses.textContent = "";
+        document.getElementById("answerRevealed").textContent = "It's " + answer.toUpperCase() + "!";
+        document.getElementById("answerRevealed").style.display = "block";
         // var result = document.getElementById("result-text");
         result.textContent = "You Lose! :( Press any key to play again";
         document.getElementById("resultBox").style.display = "block";
@@ -124,5 +128,6 @@ document.onkeyup = function(event) {
     // Makes the result disappear once you press a key and the guesses remaining goes to 11
     if (guessesRemaining.textContent === "5") {
         document.getElementById("resultBox").style.display = "none";
+        document.getElementById("answerRevealed").style.display = "none";
     }
   }
