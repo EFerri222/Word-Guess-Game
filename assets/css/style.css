@@ -3,9 +3,6 @@ body {
 }
 
 header {
-    height: 150px;
-    line-height: 150px;
-    text-align: center;
     border-bottom: 2px solid black;
     font-size: 48px;
     font-family: pokemon;
@@ -26,22 +23,15 @@ header {
     margin: 50px auto 0 auto;
 }
 
-#leftSide {
+#left-side {
     border: 2px solid black;
-    width: 50%;
-    height: 100%;
     box-sizing: border-box;
-    float: left;
     background-color: red;
 }
 
-#rightSide {
+#right-side {
     border: 2px solid black;
-    width: 50%;
-    height: 100%;
     box-sizing: border-box;
-    float: right;
-    text-align: center;
     font-size: 24px;
     padding: 24px;
     background-color: white;
@@ -62,15 +52,11 @@ img {
 }
 
 #resultBox {
-    margin:  20px auto 0 auto;
-    height: 75px;
-    text-align: center;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: bold;
     font-family: pokemon;
     background-color: #FFCB05;
     color: #3664AD;
-    width: 66%;
     display: none;
 }
 
@@ -101,15 +87,4 @@ img {
     height: 270px;
     width: 270px;
     position: relative;
-}
-
-#musicContainer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-
-#musicPlayer {
-    width: 300px;
-    margin: 0 auto 0 auto;
 }

@@ -5,41 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Who's That Pok&eacute;mon?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="assets/javascript/game.js"></script>
 </head>
 <body>
-    <header>
+    <header class="text-center pt-4 pb-5">
         Who's That Pok&eacute;mon?
     </header>
-
-    <div class="mainContent">
-        <div id="leftSide">
-            <div id="whoContainer">
-                <!-- <img src="assets/images/who.png"> -->
-                <div id="whoImg"></div>
-            </div><br>
-            <p id="answerRevealed"></p>
+    <div class="container">
+        <!-- MAIN CONTENT START -->
+        <div class="row">
+            <div class="col-md-6" id="left-side">
+                <div id="whoContainer">
+                    <!-- <img src="assets/images/who.png"> -->
+                    <div id="whoImg"></div>
+                </div><br>
+                <p id="answerRevealed"></p>
+            </div>
+            <div class="col-md-6 text-center" id="right-side">
+                Press any key to get started!<br><br>
+                <div id="winsAndLosses">Wins: 0<br>
+                Losses: 0</div><br><br>
+                Current Word: <br><br>
+                <p id="answer-text"></p> <br><br>
+                Number of Guesses Remaining: <p id="guesses-remaining-text">6</p> <br><br>
+                Letters Guessed: <p id="guesses-text"></p>
+            </div>
         </div>
-        <div id="rightSide">
-            Press any key to get started!<br><br>
-            <div id="winsAndLosses">Wins: 0<br>
-            Losses: 0</div><br><br>
-            Current Word: <br><br>
-            <p id="answer-text"></p> <br><br>
-            Number of Guesses Remaining: <p id="guesses-remaining-text">6</p> <br><br>
-            Letters Guessed: <p id="guesses-text"></p>
+        <!-- MAIN CONTENT END -->
+    
+        <!-- RESULT BOX START -->
+        <div class="row text-center pt-3 pb-4" id="resultBox">
+            <p id="result-text"></p>
         </div>
-    </div>
-
-    <div id="resultBox">
-        <p id="result-text"></p>
-    </div>
-
-    <div id="musicContainer">
-        <div id="musicPlayer">
-            <audio loop src="assets/Gym Battle Theme.mp3" controls></audio>
+        <!-- RESULT BOX END -->
+    
+        <div class="row justify-content-center mt-3">
+            <div>
+                <audio loop src="assets/Gym Battle Theme.mp3" controls></audio>
+            </div>
         </div>
     </div>
 
